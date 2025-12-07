@@ -1,19 +1,23 @@
-// main.dart
 import 'package:flutter/material.dart';
-import 'screens/home_page.dart';
+import 'screens/login_screen.dart';
 
 void main() {
-  runApp(FreshMarketApp());
+  runApp(const FreshMarketApp());
 }
 
 class FreshMarketApp extends StatelessWidget {
+  const FreshMarketApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Fresh Market',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        scaffoldBackgroundColor: Colors.grey[50],
+      ),
+      home: const LoginScreen(), // Entry point
+      debugShowCheckedModeBanner: false,
     );
   }
 }
